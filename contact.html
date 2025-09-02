@@ -67,16 +67,33 @@
     </footer>
     <script src="script.js"></script>
     <elevenlabs-convai agent-id="agent_5801k3v7t0b7egmreddvw33akvd1"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script> 
-    ElevenLabs.onClientToolCall('navigateToPage', (params) => {
-        const url = params.url;
-        if (url) {
-            window.location.href = url; // Redirect the user to the specified URL
-        } else {
-            console.error('URL parameter missing for navigateToPage tool.');
-        }
-    });
+ <script>
+        function navigateToPage(pageName) {
+  // Convert the page name to lowercase to make the function case-insensitive
+  const lowerCasePageName = pageName.toLowerCase();
+
+  switch (lowerCasePageName) {
+    case 'home':
+      window.location.href = 'index.html';
+      break;
+    case 'team':
+      window.location.href = 'team.html';
+      break;
+    case 'gallery':
+      window.location.href = 'gallery.html';
+      break;
+    case 'contact us':
+      window.location.href = 'contact.html';
+      break;
+    default:
+      // You can optionally handle cases where the page name is not recognized
+      console.log(`Page not found: ${pageName}`);
+  }
+}
+    </script>
 </body>
 </html>
+
 
 
 
